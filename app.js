@@ -1,0 +1,25 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const app = express();
+const URL = process.env.URL;
+
+const main = async () => {
+  try {
+    await mongoose.connect(URL);
+    console.log("MongoDB connected successfully ✅");
+  } catch (e) {
+    console.log("Database error:", e);
+  }
+};
+
+main();
+
+app.get("/", (req, res) => {
+  res.json({ message: "Server running 🚀" });
+});
+
+export default app;
