@@ -1,6 +1,7 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
 dotenv.config();
 
 const app = express();
@@ -21,9 +22,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Server running 🚀" });
 });
 
-app.get('/data',(req,res)=>{
-  res.send(
-    'chal rhaa  h bhai'
-  )
-})
+app.get("/data", (req, res) => {
+  res.send("chal rhaa h bhai 😄");
+});
+
+// ✅ IMPORTANT
 export default app;
