@@ -1,12 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
 dotenv.config();
-
 const app = express();
 const URL = process.env.URL;
-
+const PORT = process.env.PORT;
 const main = async () => {
   try {
     await mongoose.connect(URL);
@@ -26,5 +24,4 @@ app.get("/data", (req, res) => {
   res.send("chal rhaa h bhai 😄");
 });
 
-// ✅ IMPORTANT
-export default app;
+app.listen(PORT)
